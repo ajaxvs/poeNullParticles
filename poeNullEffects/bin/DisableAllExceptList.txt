@@ -1,0 +1,7 @@
+\lightning_orb\orb\
+\electrical_surge\
+\surge\lightning\
+\lightning_cyl.pet
+\atlasofworldsbosses\chimera\
+\traps\
+\ground_effects\lightning\

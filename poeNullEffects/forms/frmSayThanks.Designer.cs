@@ -13,7 +13,7 @@ namespace poeNullEffects
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.RichTextBox richTextBox1;
+		private System.Windows.Forms.RichTextBox txt;
 		private System.Windows.Forms.RichTextBox richTextBox2;
 		
 		/// <summary>
@@ -37,11 +37,10 @@ namespace poeNullEffects
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSayThanks));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.richTextBox2 = new System.Windows.Forms.RichTextBox();
 			this.button1 = new System.Windows.Forms.Button();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.txt = new System.Windows.Forms.RichTextBox();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -49,7 +48,7 @@ namespace poeNullEffects
 			// 
 			this.panel1.Controls.Add(this.richTextBox2);
 			this.panel1.Controls.Add(this.button1);
-			this.panel1.Controls.Add(this.richTextBox1);
+			this.panel1.Controls.Add(this.txt);
 			this.panel1.Location = new System.Drawing.Point(13, 13);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(557, 315);
@@ -64,8 +63,9 @@ namespace poeNullEffects
 			this.richTextBox2.Size = new System.Drawing.Size(392, 24);
 			this.richTextBox2.TabIndex = 2;
 			this.richTextBox2.TabStop = false;
-			this.richTextBox2.Text = "(c) http://ajaxvs.ru/?t=poe";
+			this.richTextBox2.Text = "(c) https://github.com/ajaxvs";
 			this.richTextBox2.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.onLinkClick);
+			this.richTextBox2.TextChanged += new System.EventHandler(this.RichTextBox2TextChanged);
 			// 
 			// button1
 			// 
@@ -79,16 +79,17 @@ namespace poeNullEffects
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
-			// richTextBox1
+			// txt
 			// 
-			this.richTextBox1.Location = new System.Drawing.Point(15, 15);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.ReadOnly = true;
-			this.richTextBox1.Size = new System.Drawing.Size(526, 210);
-			this.richTextBox1.TabIndex = 0;
-			this.richTextBox1.TabStop = false;
-			this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-			this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.onLinkClick);
+			this.txt.Location = new System.Drawing.Point(15, 15);
+			this.txt.Name = "txt";
+			this.txt.ReadOnly = true;
+			this.txt.Size = new System.Drawing.Size(526, 210);
+			this.txt.TabIndex = 0;
+			this.txt.TabStop = false;
+			this.txt.Text = "\nIf you like this app - feel free to say \"Thanks\" with:\n\n# Webmoney:\nZ35423677653" +
+	"1\nR600482511370\n\n# BTC:\n1KQC1BTfZ2KNa4fN8s8sB7jMahACdymoQX\n";
+			this.txt.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.onLinkClick);
 			// 
 			// frmSayThanks
 			// 

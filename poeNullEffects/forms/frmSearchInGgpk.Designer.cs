@@ -28,6 +28,10 @@ namespace poeNullEffects
 		private System.Windows.Forms.ToolStripMenuItem mnuQueryExportAll;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripMenuItem mnuFileClose;
+		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.SplitContainer splitContainer2;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -50,8 +54,6 @@ namespace poeNullEffects
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.txtQuery = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
 			this.lstRes = new System.Windows.Forms.ListBox();
 			this.txtValue = new System.Windows.Forms.RichTextBox();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -67,46 +69,47 @@ namespace poeNullEffects
 			this.importDlg = new System.Windows.Forms.OpenFileDialog();
 			this.txtStatus = new System.Windows.Forms.StatusStrip();
 			this.txtStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.txtQuery = new System.Windows.Forms.TextBox();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
 			this.menuStrip1.SuspendLayout();
 			this.txtStatus.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+			this.splitContainer1.Panel1.SuspendLayout();
+			this.splitContainer1.Panel2.SuspendLayout();
+			this.splitContainer1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+			this.splitContainer2.Panel1.SuspendLayout();
+			this.splitContainer2.Panel2.SuspendLayout();
+			this.splitContainer2.SuspendLayout();
+			this.panel2.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// txtQuery
-			// 
-			this.txtQuery.Location = new System.Drawing.Point(10, 55);
-			this.txtQuery.Name = "txtQuery";
-			this.txtQuery.Size = new System.Drawing.Size(323, 22);
-			this.txtQuery.TabIndex = 1;
-			this.txtQuery.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtQueryKeyDown);
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(10, 35);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(188, 17);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Input query and press Enter:";
 			// 
 			// lstRes
 			// 
+			this.lstRes.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.lstRes.FormattingEnabled = true;
 			this.lstRes.HorizontalScrollbar = true;
 			this.lstRes.ItemHeight = 16;
-			this.lstRes.Location = new System.Drawing.Point(13, 86);
+			this.lstRes.Location = new System.Drawing.Point(0, 0);
 			this.lstRes.Name = "lstRes";
-			this.lstRes.Size = new System.Drawing.Size(320, 564);
+			this.lstRes.Size = new System.Drawing.Size(335, 543);
 			this.lstRes.Sorted = true;
 			this.lstRes.TabIndex = 3;
 			this.lstRes.SelectedIndexChanged += new System.EventHandler(this.LstResSelectedIndexChanged);
 			// 
 			// txtValue
 			// 
+			this.txtValue.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.txtValue.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.txtValue.Location = new System.Drawing.Point(356, 55);
+			this.txtValue.Location = new System.Drawing.Point(5, 5);
 			this.txtValue.Name = "txtValue";
 			this.txtValue.ReadOnly = true;
-			this.txtValue.Size = new System.Drawing.Size(638, 595);
+			this.txtValue.Size = new System.Drawing.Size(657, 612);
 			this.txtValue.TabIndex = 4;
 			this.txtValue.Text = "";
 			this.txtValue.WordWrap = false;
@@ -208,31 +211,117 @@ namespace poeNullEffects
 			this.txtStatusLabel.Text = "toolStripStatusLabel1";
 			this.txtStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
+			// splitContainer1
+			// 
+			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.splitContainer1.Location = new System.Drawing.Point(0, 28);
+			this.splitContainer1.Name = "splitContainer1";
+			// 
+			// splitContainer1.Panel1
+			// 
+			this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+			this.splitContainer1.Panel1.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.splitContainer1.Panel1MinSize = 50;
+			// 
+			// splitContainer1.Panel2
+			// 
+			this.splitContainer1.Panel2.Controls.Add(this.txtValue);
+			this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
+			this.splitContainer1.Panel2MinSize = 50;
+			this.splitContainer1.Size = new System.Drawing.Size(1006, 622);
+			this.splitContainer1.SplitterDistance = 335;
+			this.splitContainer1.TabIndex = 7;
+			// 
+			// splitContainer2
+			// 
+			this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+			this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+			this.splitContainer2.Name = "splitContainer2";
+			this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+			// 
+			// splitContainer2.Panel1
+			// 
+			this.splitContainer2.Panel1.Controls.Add(this.panel2);
+			this.splitContainer2.Panel1.Controls.Add(this.panel1);
+			this.splitContainer2.Panel1MinSize = 75;
+			// 
+			// splitContainer2.Panel2
+			// 
+			this.splitContainer2.Panel2.Controls.Add(this.lstRes);
+			this.splitContainer2.Size = new System.Drawing.Size(335, 622);
+			this.splitContainer2.SplitterDistance = 75;
+			this.splitContainer2.TabIndex = 0;
+			// 
+			// panel2
+			// 
+			this.panel2.Controls.Add(this.txtQuery);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel2.Location = new System.Drawing.Point(0, 39);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(335, 36);
+			this.panel2.TabIndex = 1;
+			// 
+			// txtQuery
+			// 
+			this.txtQuery.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.txtQuery.Location = new System.Drawing.Point(0, 0);
+			this.txtQuery.Name = "txtQuery";
+			this.txtQuery.Size = new System.Drawing.Size(335, 22);
+			this.txtQuery.TabIndex = 1;
+			this.txtQuery.Text = "...";
+			this.txtQuery.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtQueryKeyDown);
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(335, 39);
+			this.panel1.TabIndex = 0;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(3, 9);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(188, 17);
+			this.label1.TabIndex = 4;
+			this.label1.Text = "Input query and press Enter:";
+			// 
 			// frmSearchInGgpk
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1006, 675);
+			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.txtStatus);
-			this.Controls.Add(this.txtValue);
-			this.Controls.Add(this.lstRes);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.txtQuery);
 			this.Controls.Add(this.menuStrip1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MainMenuStrip = this.menuStrip1;
-			this.MaximizeBox = false;
-			this.MinimizeBox = false;
 			this.Name = "frmSearchInGgpk";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "GGPK Search";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmSearchInGgpkFormClosing);
 			this.Load += new System.EventHandler(this.FrmSearchInGgpkLoad);
+			this.Resize += new System.EventHandler(this.FrmSearchInGgpkResize);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.txtStatus.ResumeLayout(false);
 			this.txtStatus.PerformLayout();
+			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+			this.splitContainer1.ResumeLayout(false);
+			this.splitContainer2.Panel1.ResumeLayout(false);
+			this.splitContainer2.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+			this.splitContainer2.ResumeLayout(false);
+			this.panel2.ResumeLayout(false);
+			this.panel2.PerformLayout();
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

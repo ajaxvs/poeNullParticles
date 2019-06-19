@@ -4,4 +4,15 @@
 \atlasofworldsbosses\chimera\
 \smoke_blind_chimera\
 
+\league_betrayal\totem\
+\league_betrayal\bosscatarina\
+\catarina
+
+Dark_Ritual
+Soulrend
+FrostFury
+Conduit_Sigil
+
+\League_Legion\RewardSystem\
+
 //edit lists as you want.

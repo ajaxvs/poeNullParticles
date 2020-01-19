@@ -14,5 +14,6 @@ FrostFury
 Conduit_Sigil
 
 \League_Legion\RewardSystem\
+\atlasexiles\Orion
 
 //edit lists as you want.

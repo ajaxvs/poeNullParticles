@@ -14,16 +14,14 @@ namespace poeNullEffects {
             InitializeComponent();
 			
             optAll.Checked = true;
-            txtList.Text = "The Best Performance Method (recommended)";
+            txtList.Text = "The Best Performance Method";
 			
             //emitters:
-            var s = CajApp.config.read(CajConfig.keyKeepEmitters);
-            if (s != "") {				
-                setEmitters(int.Parse(s), false);
-            }
+            var emitters = CajApp.config.readInt(CajConfig.keyKeepEmitters, 0);
+            setEmitters(emitters, false);
 			
             //method:
-            s = CajApp.config.read(CajConfig.keyNullParticlesMethod);
+            var s = CajApp.config.read(CajConfig.keyNullParticlesMethod);
             if (s == CajApp.NULL_TYPE_ALL.ToString()) {
                 optAll.Checked = true;
             } else if (s == CajApp.NULL_TYPE_ALL_EXCEPT.ToString()) {
@@ -50,39 +48,39 @@ namespace poeNullEffects {
             CajApp.config.write(CajConfig.keyNullParticlesMethod, s, true);
         }
         //================================================================================
-        void loadList(string filePath) {
+        private void loadList(string filePath) {
             try {
                 txtList.Text = System.IO.File.ReadAllText(filePath);
-                //lblLog.Text = CajApp.getCurrentTimeFormat() + ". loaded list."; //debug.
+                //lblLog.Text = CajApp.getCurrentTimeFormat() + ". loaded list.";
             } catch (Exception ex) {
                 lblLog.Text = CajApp.getCurrentTimeFormat() + ". Error loading list: " + ex.Message;
                 txtList.Text = "";
             }
         }
         //================================================================================
-        void OptAllCheckedChanged(object sender, EventArgs e) {
+        private void OptAllCheckedChanged(object sender, EventArgs e) {
             if (optAll.Checked) {
                 onMethodChange();
-                txtList.Text = "The Best Performance Method (recommended)";
+                txtList.Text = "The Best Performance Method";
                 lblLog.Text = "";
             }
         }
         //================================================================================
-        void OptAllExceptCheckedChanged(object sender, EventArgs e) {
+        private void OptAllExceptCheckedChanged(object sender, EventArgs e) {
             if (optAllExcept.Checked) {
                 onMethodChange();
                 loadList(CajApp.getAppPath() + CajApp.effectsListFileAllExcept);
             }
         }
         //================================================================================
-        void OptOnlyCheckedChanged(object sender, EventArgs e) {
+        private void OptOnlyCheckedChanged(object sender, EventArgs e) {
             if (optOnly.Checked) {
                 onMethodChange();
                 loadList(CajApp.getAppPath() + CajApp.effectsListFileOnly);
             }
         }
         //================================================================================
-        void ButOkClick(object sender, EventArgs e) {
+        private void ButOkClick(object sender, EventArgs e) {
             int type = 0;
             string text = "";
             if (optAll.Checked) {
@@ -96,18 +94,14 @@ namespace poeNullEffects {
                 text = txtList.Text;
             }
 
-            int numKeepEmitters = 0;			
-            String s = CajApp.config.read(CajConfig.keyKeepEmitters);
-            if (s != "") {
-                numKeepEmitters = int.Parse(s);
-            }
-			
-            CajApp.nullEffects(type, text, numKeepEmitters);
-			
+            int numKeepEmitters = CajApp.config.readInt(CajConfig.keyKeepEmitters, 0);
+
             this.Hide();
+
+            CajApp.nullEffectsButtonAction(type, text, numKeepEmitters);
         }
         //================================================================================
-        void butSaveListClick(object sender, EventArgs e) {			
+        private void butSaveListClick(object sender, EventArgs e) {			
             string sRes = "";
 			
             if (optAllExcept.Checked) {
@@ -119,17 +113,17 @@ namespace poeNullEffects {
             lblLog.Text = sRes;
         }
         //================================================================================
-        void TxtListKeyUp(object sender, KeyEventArgs e) {
+        private void TxtListKeyUp(object sender, KeyEventArgs e) {
             if (!optAll.Checked) {
                 butSave.Enabled = true;
             }
         }
         //================================================================================
-        void MnuKeepEmitters0Click(object sender, EventArgs e) {
+        private void MnuKeepEmitters0Click(object sender, EventArgs e) {
             setEmitters(0, true);
         }
         //================================================================================
-        void MnuKeepEmitters1Click(object sender, EventArgs e) {
+        private void MnuKeepEmitters1Click(object sender, EventArgs e) {
             setEmitters(1, true);
         }
         //================================================================================

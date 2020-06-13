@@ -21,7 +21,7 @@ namespace poeNullEffects {
             funOnOK = onOK;
         }
         //================================================================================
-        void ButOKClick(object sender, EventArgs e) {
+        private void ButOKClick(object sender, EventArgs e) {
             if (funOnOK != null) {
                 funOnOK(txtValue.Text);
             }
